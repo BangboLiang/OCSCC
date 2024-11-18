@@ -1,3 +1,14 @@
+/*
+Solve this problem:
+Maximize 7x1 + 8x2 + 2x3 + 9x4 + 6x5 subject to the following constraints:
+
+5 x1 + 7 x2 + 9 x3 + 2 x4 + 1 x5 ≤ 250
+18 x1 + 4 x2 - 9 x3 + 10 x4 + 12 x5 ≤ 285
+4 x1 + 7 x2 + 3 x3 + 8 x4 + 5 x5 ≤ 211
+5 x1 + 13 x2 + 16 x3 + 3 x4 - 7 x5 ≤ 315
+
+*/
+
 #include <memory>
 #include <vector>
 
