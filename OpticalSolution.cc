@@ -17,9 +17,9 @@ const std::vector<std::vector<double> > bounds{
     {18, 0, 9, 10}, 
     {4, 7, 0, 8}, 
     {5, 13, 16, 0},
-    };
+};
 
-int num_vars; //How many variables in the ILP problem.
+int num_vars;           //How many variables in the ILP problem.
 int num_constraints;
 
 int main(int argc, char const *argv[])
@@ -122,5 +122,36 @@ int main(int argc, char const *argv[])
     for (int j = 0; j < num_vars; ++j) {
         LOG(INFO) << "x[" << j << "] = " << t[j]->solution_value();
     }
+    
+    std::vector<std::vector<double> > total_bytes;
+    total_bytes.resize(width, std::vector<double>(width));
+    for (int i = 0; i < width; i++)
+        {
+            for (int j = 0; j < width; j++)
+            {
+                total_bytes[i][j] = 0;
+            }
+            
+        }
+    for (int index = 0; index < num_vars; index++)
+    {
+        for (int i = 0; i < width; i++)
+        {
+            for (int j = 0; j < width; j++)
+            {
+                total_bytes[i][j] += t[index]->solution_value() * constraint_coeffs[index][i][j];
+            }
+        }
+    }
+
+    std::cout << "The total Byte transported:\n";
+    for (int i = 0; i < width; i++)
+        {
+            for (int j = 0; j < width; j++)
+            {
+                std::cout << total_bytes[i][j] << ' ';
+            }
+            std::cout << '\n';
+        }
     return 0;
 }
