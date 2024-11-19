@@ -14,6 +14,11 @@ export LD_LIBRARY_PATH=YourPathToORTools/lib/:$LD_LIBRARY_PATH
 ```
 You should change `YourPathToORTools` to your own OR tool's root directory.
 
+example:
+```bash
+export LD_LIBRARY_PATH=~/or-tools_x86_64_Ubuntu-22.04_cpp_v9.11.4210/lib/:$LD_LIBRARY_PATH
+```
+
 2. Compile
 
 You can use make to compile, before that, you should change `INCLUDE_PATH` and `LIB_PATH` of Makefile to your own paths. After that, you can use `make`:
@@ -28,3 +33,9 @@ g++ -I YourPathToORTools/include/ ORexamples.cc -L YourPathToORTools/lib/ -lorto
 ```
 You should change `YourPathToORTools` to your own OR tool's root directory.
 
+3. Use
+
+Just type:
+```bash
+./OpticalSolution
+```
