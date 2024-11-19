@@ -19,6 +19,8 @@ example:
 export LD_LIBRARY_PATH=~/or-tools_x86_64_Ubuntu-22.04_cpp_v9.11.4210/lib/:$LD_LIBRARY_PATH
 ```
 
+You can also change the file: config.sh for convenience.
+
 2. Compile
 
 You can use make to compile, before that, you should change `INCLUDE_PATH` and `LIB_PATH` of Makefile to your own paths. After that, you can use `make`:
